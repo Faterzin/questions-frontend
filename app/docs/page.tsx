@@ -98,7 +98,7 @@ export default function Docs() {
             <div className="grid sm:grid-cols-2 gap-3">
               <div className="p-4 rounded-lg border border-border bg-card">
                 <p className="text-xs text-muted mb-1">Base URL — Produção</p>
-                <code className="text-sm text-accent font-mono">https://questions-api-kappa.vercel.app</code>
+                <code className="text-sm text-accent font-mono">https://questions-backend-five.vercel.app</code>
               </div>
               <div className="p-4 rounded-lg border border-border bg-card">
                 <p className="text-xs text-muted mb-1">Base URL — Local</p>

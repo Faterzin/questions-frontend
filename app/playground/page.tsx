@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-const BASE_URL = 'https://questions-api-kappa.vercel.app'
+const BASE_URL = 'https://questions-backend-five.vercel.app'
 
 export default function Playground() {
   const [category, setCategory] = useState('')

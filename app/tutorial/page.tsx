@@ -1,12 +1,12 @@
 import CodeBlock from '@/components/CodeBlock'
 
-const step1Fetch = `const res = await fetch('https://questions-api-kappa.vercel.app/questions')
+const step1Fetch = `const res = await fetch('https://questions-backend-five.vercel.app/questions')
 const data = await res.json()
 
 console.log(data.total) // 44
 console.log(data.data)  // array de questões`
 
-const step1Curl = `curl https://questions-api-kappa.vercel.app/questions`
+const step1Curl = `curl https://questions-backend-five.vercel.app/questions`
 
 const step2Code = `// Por categoria
 const res = await fetch('/questions?category=JavaScript')
@@ -76,7 +76,7 @@ const step6Code = `function shuffleOptions(question) {
 
 async function buildQuiz(category, difficulty, count = 5) {
   const res = await fetch(
-    \`https://questions-api-kappa.vercel.app/questions?category=\${category}&difficulty=\${difficulty}&limit=\${count}\`
+    \`https://questions-backend-five.vercel.app/questions?category=\${category}&difficulty=\${difficulty}&limit=\${count}\`
   )
   const { data } = await res.json()
 
@@ -97,7 +97,7 @@ quiz.forEach((q, i) => {
 const axiosCode = `import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'https://questions-api-kappa.vercel.app',
+  baseURL: 'https://questions-backend-five.vercel.app',
 })
 
 // Questões filtradas

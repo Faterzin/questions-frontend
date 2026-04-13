@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import CodeBlock from '@/components/CodeBlock'
 
-const quickStart = `const res = await fetch('https://questions-api-kappa.vercel.app/questions?limit=5')
+const quickStart = `const res = await fetch('https://questions-backend-five.vercel.app/questions?limit=5')
 const { data } = await res.json()
 
 data.forEach(q => console.log(q.title))`
@@ -31,7 +31,7 @@ const features = [
 
 async function getTotalQuestions(): Promise<string> {
   try {
-    const res = await fetch('https://questions-api-kappa.vercel.app/questions?limit=1', {
+    const res = await fetch('https://questions-backend-five.vercel.app/questions?limit=1', {
       next: { revalidate: 3600 },
     })
     if (!res.ok) throw new Error()
@@ -59,7 +59,7 @@ export default async function Home() {
       <section className="py-24 flex flex-col items-center text-center gap-6">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-border text-xs text-muted bg-card">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-          API online · questions-api-kappa.vercel.app
+          API online · questions-backend-five.vercel.app
         </div>
 
         <h1 className="text-5xl sm:text-6xl font-bold tracking-tight">

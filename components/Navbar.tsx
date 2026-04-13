@@ -42,7 +42,7 @@ export default function Navbar() {
             GitHub
           </a>
           <a
-            href="https://questions-api-kappa.vercel.app/questions"
+            href="https://questions-backend-five.vercel.app/questions"
             target="_blank"
             rel="noopener noreferrer"
             className="px-4 py-1.5 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
@@ -92,7 +92,7 @@ export default function Navbar() {
               GitHub
             </a>
             <a
-              href="https://questions-api-kappa.vercel.app/questions"
+              href="https://questions-backend-five.vercel.app/questions"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex w-fit px-4 py-2 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
