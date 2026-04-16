@@ -3,6 +3,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import { Analytics } from '@vercel/analytics/next'
+import { AuthProviderWrapper } from '@/components/AuthProviderWrapper'
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL ?? 'https://questions-frontend.vercel.app'
 
@@ -32,9 +33,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="pt-BR">
       <body className="bg-surface text-white antialiased min-h-screen flex flex-col">
-        <Navbar />
-        <main className="flex-1">{children}</main>
-        <Footer />
+        <AuthProviderWrapper>
+          <Navbar />
+          <main className="flex-1">{children}</main>
+          <Footer />
+        </AuthProviderWrapper>
         <Analytics />
       </body>
     </html>

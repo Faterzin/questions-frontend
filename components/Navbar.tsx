@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
+import { useAuth } from '@/context/AuthContext'
 
 const links = [
   { href: '/docs', label: 'Docs' },
@@ -11,6 +12,7 @@ const links = [
 export default function Navbar() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
+  const { user } = useAuth()
 
   return (
     <header className="border-b border-border sticky top-0 z-50 bg-surface/90 backdrop-blur">
@@ -39,12 +41,21 @@ export default function Navbar() {
           >
             GitHub
           </a>
-          <a
-            href="/login"
-            className="px-4 py-1.5 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
-          >
-            Login
-          </a>
+          {user ? (
+            <Link
+              href="/dashboard"
+              className="px-4 py-1.5 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
+            >
+              Dashboard
+            </Link>
+          ) : (
+            <Link
+              href="/login"
+              className="px-4 py-1.5 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
+            >
+              Login
+            </Link>
+          )}
         </nav>
 
         {/* Hamburger */}
@@ -87,12 +98,23 @@ export default function Navbar() {
             >
               GitHub
             </a>
-            <a
-              href="/login"
-              className="inline-flex w-fit px-4 py-2 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
-            >
-              Login
-            </a>
+            {user ? (
+              <Link
+                href="/dashboard"
+                onClick={() => setOpen(false)}
+                className="inline-flex w-fit px-4 py-2 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
+              >
+                Dashboard
+              </Link>
+            ) : (
+              <Link
+                href="/login"
+                onClick={() => setOpen(false)}
+                className="inline-flex w-fit px-4 py-2 rounded-md bg-accent hover:bg-accent-hover text-white transition-colors"
+              >
+                Login
+              </Link>
+            )}
           </nav>
         </div>
       )}
